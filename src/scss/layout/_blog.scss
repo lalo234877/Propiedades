@@ -1,0 +1,153 @@
+@include tablet {
+    .seccion-blog {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        column-gap: 4rem;
+        align-items: start;
+    }
+}
+
+
+.blog,
+.testimoniales {
+    h3 {
+        
+        margin: 0 0 2rem 0;
+        text-transform: capitalize; 
+        font-weight: 500;
+    }
+}
+
+// Entradas del blog
+.entrada-blog {
+    margin-bottom: 2.5rem;
+    padding-bottom: 2.5rem;
+    border-bottom: 1px solid rgba(0, 0, 0, .1);
+
+    @include tablet {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        column-gap: 2rem;
+        align-items: center;
+    }
+
+    &:last-of-type {
+        margin-bottom: 0;
+        padding-bottom: 0;
+        border-bottom: none;
+    }
+
+    // Imágenes uniformes y con efecto hover
+    .imagen {
+        overflow: hidden;
+        border-radius: 1rem;
+        margin-bottom: 1.5rem;
+
+        @include tablet {
+            margin-bottom: 0;
+        }
+
+        img {
+            display: block;
+            width: 100%;
+            height: 20rem;
+            object-fit: cover;
+            transition: transform .4s ease;
+        }
+    }
+
+    &:hover .imagen img {
+        transform: scale(1.06);
+    }
+}
+
+
+.texto-entrada {
+    p,
+    h4 {
+        margin: 0;
+    }
+
+    h4 {
+        line-height: 1.4;
+        font-size: 2.2rem;
+        transition: color .3s ease;
+
+        &::after {
+            content: "";
+            display: block;
+            width: 6rem;          
+            height: .4rem;
+            border-radius: 1rem;
+            background-color: $verde;
+            margin: 1rem 0 1.5rem 0;
+            transition: width .3s ease;
+        }
+    }
+
+   
+    p:first-of-type {
+        font-size: 1.4rem;
+        color: #777;
+        margin-bottom: 1rem;
+
+        span {
+            color: $verde;
+            font-weight: 700;
+        }
+    }
+
+    // Descripción
+    p:last-of-type {
+        line-height: 1.7;
+        color: #444;
+    }
+}
+
+.entrada-blog:hover .texto-entrada h4 {
+    color: $verde;
+
+    &::after {
+        width: 12rem; 
+    }
+}
+
+
+.testimonial {
+    position: relative;
+    background-color: #f6f8f3;
+    border-left: .5rem solid $verde;
+    border-radius: 1rem;
+    padding: 2.5rem 2rem 2rem 2rem;
+    box-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, .06);
+
+
+
+    blockquote {
+        position: relative;
+        margin: 0 0 1.5rem 0;
+        font-size: 1.7rem;
+        line-height: 1.7;
+        font-style: italic;
+        color: #333;
+    }
+
+    p {
+        margin: 0;
+        text-align: right;
+        font-weight: 700;
+        color: $verde;
+        font-size: 1.6rem;
+
+        &::before {
+            content: "— ";
+        }
+    }
+}
+
+.seccion-blogs {
+   h3{
+    align-items: center;
+   }
+}
+

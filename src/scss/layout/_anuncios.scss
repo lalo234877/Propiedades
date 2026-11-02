@@ -1,0 +1,65 @@
+.contenedor-anuncios {
+    display: flex;              // en móvil: una columna
+    flex-direction: column;
+    gap: 2rem;                  // separación entre tarjetas
+
+    @include tablet {
+        @include grid(3, 2rem); // en tablet ya usa grid con gap
+    }
+}
+
+.anuncio {
+    background-color: lighten($gris, 5); 
+    border: 1px solid darken($gris, 10);
+    display: flex;                       
+    flex-direction: column;
+                
+
+    .contenido-anuncio {
+        padding: 2rem;
+        flex: 1;                        
+        display: flex;                  
+        flex-direction: column;          
+    }
+
+    h3, p {
+        margin: 0;
+    }
+
+    .precio {
+        color: $verde;
+        font-weight: 600;
+        padding-bottom: 2rem;
+        
+    }
+}
+
+.iconos-caracteristicas {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    justify-content: space-around;
+    align-items: flex-end;
+    margin-top: auto;                  
+
+    li {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-end;
+    }
+
+    img {
+        height: 3rem;
+        width: auto;
+    }
+
+    p {
+        text-align: center;
+        font-weight: 700;
+        margin: 0.5rem 0 0;
+       
+    }
+}
+
+

@@ -1,0 +1,23 @@
+.barra {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;           
+}
+
+.navegacion {
+    display: none; 
+
+    @include telefono {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+    }
+
+    a {
+        color: $blanco;
+        text-decoration: none;
+        font-size: 2.2rem;
+        display: block;
+        text-align: center;
+    }
+}

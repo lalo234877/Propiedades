@@ -1,0 +1,22 @@
+.boton-amarillo{
+    @include boton($amarillo);
+    display: block;
+}
+.boton-amarillos{
+    @include boton($amarillo);
+    display: inline-block;
+   
+}
+
+.boton-verdes{
+    padding-top: 2rem;
+    display: flex;
+    justify-content: end;
+    a{ @include boton($verde);
+   }
+}
+.boton-verde{
+    a{ @include boton($verde);
+    display: block;
+   }
+}
